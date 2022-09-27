@@ -1,6 +1,6 @@
-import { Container, Title, Text } from "@mantine/core";
+import { Container, Title, Text, Sx } from "@mantine/core";
 
-const CONTAINER_STYLE = {
+const CONTAINER_STYLE: Sx = {
   display: "flex",
   justifyContent: "center",
   alignItems: "baseline",
@@ -8,7 +8,7 @@ const CONTAINER_STYLE = {
 
 export const PageHeader = () => {
   return (
-    <Container p="xs" style={CONTAINER_STYLE}>
+    <Container p="xs" sx={CONTAINER_STYLE}>
       <Title order={2} variant="gradient" weight="normal">
         {"{DEV.MOUNTAIN}"}
       </Title>

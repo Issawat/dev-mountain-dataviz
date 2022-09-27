@@ -1,4 +1,4 @@
-import { Tabs } from "@mantine/core";
+import { Container, Tabs } from "@mantine/core";
 import { TablerIcon } from "@tabler/icons";
 
 export type TabViewItem = {
@@ -19,7 +19,7 @@ export const TabView = ({ tabs, defaultKey }: Props) => {
     <Tabs radius="md" color="gray" defaultValue={defaultTabKey}>
       <Tabs.List
         mt="md"
-        style={{
+        sx={{
           justifyContent: "center",
         }}
       >
@@ -36,7 +36,14 @@ export const TabView = ({ tabs, defaultKey }: Props) => {
 
       {tabs.map((tab) => (
         <Tabs.Panel key={`tab-panel-${tab.key}`} value={tab.key} pt="xs">
-          {tab.children}
+          <Container
+            fluid
+            sx={{
+              overflowX: "auto",
+            }}
+          >
+            {tab.children}
+          </Container>
         </Tabs.Panel>
       ))}
     </Tabs>
