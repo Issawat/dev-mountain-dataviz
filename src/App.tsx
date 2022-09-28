@@ -1,5 +1,6 @@
 import { MantineProvider } from "@mantine/core";
 import { IconTable, IconChartPie } from "@tabler/icons";
+import { DataVisualizationView } from "./components/DataVisualizationView";
 import { PageHeader } from "./components/PageHeader";
 import { TableView } from "./components/TableView";
 import { TabView } from "./components/TabView";
@@ -23,7 +24,7 @@ const App = () => {
             key: TabCategory.DATA_VISUALIZATION_VIEW,
             title: "Visualization",
             icon: IconChartPie,
-            children: <>Visualization will be here</>,
+            children: <DataVisualizationView {...dataProps} />,
           },
           {
             key: TabCategory.TABLE_VIEW,
