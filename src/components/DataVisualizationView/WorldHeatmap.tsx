@@ -11,7 +11,7 @@ export const WorldHeatmap = () => {
         <Title order={3} variant="gradient" weight="normal">
           Country
         </Title>
-        <Text>Where are the employees come from</Text>
+        <Text>World wide illustration of employees' country</Text>
         <ComposableMap width={1200} height={500}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>

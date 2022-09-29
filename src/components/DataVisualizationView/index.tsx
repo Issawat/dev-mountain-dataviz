@@ -26,10 +26,7 @@ const MainContainer = ({ items }: { items: DataVizItem[] }) => {
       cols={3}
       spacing="lg"
       mb="lg"
-      breakpoints={[
-        { maxWidth: 1000, cols: 2, spacing: "md" },
-        { maxWidth: 600, cols: 1, spacing: "sm" },
-      ]}
+      breakpoints={[{ maxWidth: 800, cols: 1, spacing: "sm" }]}
     >
       {items.map(({ title, description, component }) => (
         <Paper shadow="sm" radius="xl" p="xl">
@@ -37,7 +34,7 @@ const MainContainer = ({ items }: { items: DataVizItem[] }) => {
             <Title order={3} variant="gradient" weight="normal">
               {title}
             </Title>
-            <Text>{description}</Text>
+            <Text align="center">{description}</Text>
             {component}
           </Stack>
         </Paper>

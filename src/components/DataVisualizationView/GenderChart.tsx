@@ -8,13 +8,14 @@ function transformGenderData(data: DataShape[]) {
   const totalLength = data?.length ?? 0;
   const totalMale = data?.filter((item) => item.gender === "M")?.length;
   const totalFemale = totalLength ? totalLength - totalMale : 0;
+  const percentFemale = Math.round((totalFemale / totalLength) * 100);
   return [
     {
-      x: `Male (${Math.round(totalMale / totalLength) * 100}%)`,
+      x: `Male (${100 - percentFemale}%)`,
       y: totalMale,
     },
     {
-      x: `Female (${Math.round((totalFemale / totalLength) * 100)}%)`,
+      x: `Female (${percentFemale}%)`,
       y: totalFemale,
     },
   ];

@@ -24,8 +24,10 @@ function transformHiringData(data: DataShape[]) {
 export const HiringChart = ({ data }: Props) => {
   const hiringData = transformHiringData(data);
   return (
-    <VictoryChart theme={VictoryTheme.material}>
+    <VictoryChart theme={VictoryTheme.material} minDomain={{ y: 0 }}>
       <VictoryLine
+        interpolation="natural"
+        labels={({ datum }) => datum.y}
         style={{
           data: { stroke: "#c43a31" },
           parent: { border: "1px solid #ccc" },
