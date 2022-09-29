@@ -1,4 +1,4 @@
-import { MantineProvider, Paper, Stack, Title, Text, Box } from "@mantine/core";
+import { MantineProvider, Paper, Stack, Title, Text } from "@mantine/core";
 import { IconTable, IconChartPie } from "@tabler/icons";
 import { DataVisualizationView } from "./components/DataVisualizationView";
 import { WorldHeatmap } from "./components/DataVisualizationView/WorldHeatmap";
