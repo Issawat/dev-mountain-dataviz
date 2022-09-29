@@ -24,8 +24,7 @@ export const GenderChart = ({ data }: Props) => {
   const transformedData = transformGenderData(data);
   return (
     <VictoryPie
-      colorScale={["navy", "red"]}
-      theme={VictoryTheme.material}
+      theme={VictoryTheme.grayscale}
       padAngle={({ datum }) => datum.y}
       data={transformedData}
       innerRadius={80}
