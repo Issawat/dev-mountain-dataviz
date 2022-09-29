@@ -10,11 +10,11 @@ function transformGenderData(data: DataShape[]) {
   const totalFemale = totalLength ? totalLength - totalMale : 0;
   return [
     {
-      x: "Male",
+      x: `Male (${Math.round(totalMale / totalLength) * 100}%)`,
       y: totalMale,
     },
     {
-      x: "Female",
+      x: `Female (${Math.round((totalFemale / totalLength) * 100)}%)`,
       y: totalFemale,
     },
   ];
@@ -24,14 +24,14 @@ export const GenderChart = ({ data }: Props) => {
   const transformedData = transformGenderData(data);
   return (
     <VictoryPie
-      theme={VictoryTheme.grayscale}
+      colorScale={["navy", "orange"]}
       padAngle={({ datum }) => datum.y}
       data={transformedData}
-      innerRadius={80}
+      innerRadius={10}
       style={{
         labels: {
           fill: "black",
-          fontSize: 18,
+          fontSize: 13,
           fontWeight: "semibold",
         },
       }}
