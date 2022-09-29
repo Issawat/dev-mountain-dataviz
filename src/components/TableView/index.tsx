@@ -5,7 +5,7 @@ export const TableView = ({ data, isLoading }: DataComponentProps) => {
   if (isLoading)
     return (
       <Center>
-        <Loader size="xl" />;
+        <Loader mt={10} size="xl" />;
       </Center>
     );
   return (

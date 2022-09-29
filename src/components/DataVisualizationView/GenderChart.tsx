@@ -1,4 +1,4 @@
-import { VictoryPie } from "victory";
+import { VictoryPie, VictoryTheme } from "victory";
 import { DataShape } from "../../hooks/useData";
 type Props = {
   data: DataShape[];
@@ -24,11 +24,11 @@ export const GenderChart = ({ data }: Props) => {
   const transformedData = transformGenderData(data);
   return (
     <VictoryPie
-      animate={{ onLoad: { duration: 1000 } }}
       colorScale={["navy", "red"]}
+      theme={VictoryTheme.material}
       padAngle={({ datum }) => datum.y}
       data={transformedData}
-      innerRadius={100}
+      innerRadius={80}
       style={{
         labels: {
           fill: "black",

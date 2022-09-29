@@ -18,7 +18,7 @@ const App = () => {
     <MantineProvider theme={THEME_CONFIGURATION}>
       <PageHeader />
       <TabView
-        defaultKey={TabCategory.TABLE_VIEW}
+        defaultKey={TabCategory.DATA_VISUALIZATION_VIEW}
         tabs={[
           {
             key: TabCategory.DATA_VISUALIZATION_VIEW,

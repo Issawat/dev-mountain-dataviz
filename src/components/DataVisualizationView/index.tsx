@@ -1,4 +1,12 @@
-import { Text, Paper, SimpleGrid, Stack, Title } from "@mantine/core";
+import {
+  Text,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Title,
+  Center,
+  Loader,
+} from "@mantine/core";
 import React from "react";
 import { DataComponentProps } from "../../hooks/useData";
 import { GenderChart } from "./GenderChart";
@@ -37,6 +45,12 @@ export const DataVisualizationView = ({
   data,
   isLoading,
 }: DataComponentProps) => {
+  if (isLoading)
+    return (
+      <Center>
+        <Loader mt={10} size="xl" />;
+      </Center>
+    );
   return (
     <MainContainer
       items={[
