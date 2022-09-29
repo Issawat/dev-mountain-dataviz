@@ -4,18 +4,20 @@ type Props = {
   data: DataShape[];
 };
 
+function transformAgeData(data: DataShape[]) {
+  const currentYear = new Date().getFullYear();
+  return data.map((item) => ({
+    x: currentYear - Number(item.birthDate.split("-")[0]),
+  }));
+}
+
 export const AgeChart = ({ data }: Props) => {
+  const ageData = transformAgeData(data);
   return (
-    <VictoryChart domainPadding={10}>
+    <VictoryChart domainPadding={10} height={430}>
       <VictoryHistogram
         style={{ data: { fill: "#c43a31" } }}
-        data={[
-          { x: 1, y: 2 },
-          { x: 2, y: 3 },
-          { x: 3, y: 5 },
-          { x: 4, y: 4 },
-          { x: 5, y: 7 },
-        ]}
+        data={ageData}
       />
     </VictoryChart>
   );
