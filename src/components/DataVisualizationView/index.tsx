@@ -12,6 +12,7 @@ import { DataComponentProps } from "../../hooks/useData";
 import { AgeChart } from "./AgeChart";
 import { GenderChart } from "./GenderChart";
 import { HiringChart } from "./HiringChart";
+import { WorldHeatmap } from "./WorldHeatmap";
 
 type DataVizItem = {
   title: string;
@@ -23,13 +24,15 @@ const MainContainer = ({ items }: { items: DataVizItem[] }) => {
   return (
     <SimpleGrid
       cols={3}
+      spacing="lg"
+      mb="lg"
       breakpoints={[
         { maxWidth: 1000, cols: 2, spacing: "md" },
         { maxWidth: 600, cols: 1, spacing: "sm" },
       ]}
     >
       {items.map(({ title, description, component }) => (
-        <Paper shadow="xl" radius="md" p="xl">
+        <Paper shadow="sm" radius="xl" p="xl">
           <Stack align="center">
             <Title order={3} variant="gradient" weight="normal">
               {title}
@@ -54,24 +57,27 @@ export const DataVisualizationView = ({
       </Center>
     );
   return (
-    <MainContainer
-      items={[
-        {
-          title: "Gender",
-          description: "The comparison of the employee's gender status",
-          component: <GenderChart data={data} />,
-        },
-        {
-          title: "Hiring",
-          description: "The hiring rate for every 10 years",
-          component: <HiringChart data={data} />,
-        },
-        {
-          title: "Age",
-          description: "How old they are?",
-          component: <AgeChart data={data} />,
-        },
-      ]}
-    />
+    <>
+      <MainContainer
+        items={[
+          {
+            title: "Gender",
+            description: "The comparison of the employee's gender status",
+            component: <GenderChart data={data} />,
+          },
+          {
+            title: "Hiring",
+            description: "The hiring rate for every 10 years",
+            component: <HiringChart data={data} />,
+          },
+          {
+            title: "Age",
+            description: "How old they are?",
+            component: <AgeChart data={data} />,
+          },
+        ]}
+      />
+      <WorldHeatmap />
+    </>
   );
 };
