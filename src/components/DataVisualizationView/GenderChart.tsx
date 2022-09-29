@@ -1,4 +1,4 @@
-import { VictoryPie, VictoryTheme } from "victory";
+import { VictoryPie } from "victory";
 import { DataShape } from "../../hooks/useData";
 type Props = {
   data: DataShape[];
