@@ -9,7 +9,7 @@ const CONTAINER_STYLE: Sx = {
 export const PageHeader = () => {
   return (
     <Container p="xs" sx={CONTAINER_STYLE}>
-      <Title order={2} variant="gradient" weight="normal">
+      <Title order={2} variant="gradient" weight="bold">
         {"{DEV.MOUNTAIN}"}
       </Title>
       <Text italic color="gray" weight="bold" ml="xs">

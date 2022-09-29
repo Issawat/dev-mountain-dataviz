@@ -16,7 +16,7 @@ type Props = {
 export const TabView = ({ tabs, defaultKey }: Props) => {
   const defaultTabKey = defaultKey ?? tabs[0].key;
   return (
-    <Tabs radius="md" color="gray" defaultValue={defaultTabKey}>
+    <Tabs variant="pills" radius="md" color="blue" defaultValue={defaultTabKey}>
       <Tabs.List
         mt="md"
         sx={{

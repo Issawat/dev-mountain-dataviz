@@ -1,5 +1,7 @@
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, Paper, Stack, Title, Text, Box } from "@mantine/core";
 import { IconTable, IconChartPie } from "@tabler/icons";
+import { DataVisualizationView } from "./components/DataVisualizationView";
+import { WorldHeatmap } from "./components/DataVisualizationView/WorldHeatmap";
 import { PageHeader } from "./components/PageHeader";
 import { TableView } from "./components/TableView";
 import { TabView } from "./components/TabView";
@@ -17,13 +19,13 @@ const App = () => {
     <MantineProvider theme={THEME_CONFIGURATION}>
       <PageHeader />
       <TabView
-        defaultKey={TabCategory.TABLE_VIEW}
+        defaultKey={TabCategory.DATA_VISUALIZATION_VIEW}
         tabs={[
           {
             key: TabCategory.DATA_VISUALIZATION_VIEW,
             title: "Visualization",
             icon: IconChartPie,
-            children: <>Visualization will be here</>,
+            children: <DataVisualizationView {...dataProps} />,
           },
           {
             key: TabCategory.TABLE_VIEW,
@@ -33,6 +35,15 @@ const App = () => {
           },
         ]}
       />
+      <Paper shadow="xl" radius="md" p="md" m="md">
+        <Stack align="center">
+          <Title order={3} variant="gradient" weight="normal">
+            Country
+          </Title>
+          <Text mb={-100}>Where are the employees come from</Text>
+          <WorldHeatmap />
+        </Stack>
+      </Paper>
     </MantineProvider>
   );
 };
