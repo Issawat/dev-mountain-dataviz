@@ -74,7 +74,7 @@ export const DataVisualizationView = ({
           },
         ]}
       />
-      <WorldHeatmap />
+      <WorldHeatmap data={data} />
     </>
   );
 };
